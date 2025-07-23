@@ -19,7 +19,8 @@ export const metadata: Metadata = {
     siteName: "MDN Web Docs",
     images: [
       {
-        url: "https://auto-delete-todo-list.vercel.app/img-share.png",
+        url: "https://developer.mozilla.org/mdn-social-share.d893525a4fb5fb1f67a2.png",
+        // url: "https://auto-delete-todo-list.vercel.app/img-share.png",
         width: 1920,
         height: 1080,
         alt: "The MDN Web Docs logo, featuring a blue accent color, displayed on a solid black background.",
