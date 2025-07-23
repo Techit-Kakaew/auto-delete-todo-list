@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import ShareButton from "@/app/components/share-button";
 
 export const metadata: Metadata = {
-  facebook: {
-    appId: "593834620463376",
-  },
+  // facebook: {
+  //   appId: "593834620463376",
+  // },
   title: "MDN Web Docs",
   description:
     "The MDN Web Docs site provides information about Open Web technologies including HTML, CSS, and APIs for both Web sites and progressive web apps.",
