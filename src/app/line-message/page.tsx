@@ -10,6 +10,8 @@ const LineMessage = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       if (typeof window !== "undefined" && liff.isLoggedIn()) {
+        await liff.ready;
+        alert(JSON.stringify(liff?.getContext()));
         const userProfile = await liff?.getProfile();
         setProfile(userProfile);
       }
@@ -35,6 +37,7 @@ const LineMessage = () => {
       alert("ส่งข้อความเรียบร้อยแล้ว!");
       liff.closeWindow(); // ปิด LIFF ถ้าต้องการ
     } catch (error) {
+      alert(error);
       console.error("ส่งข้อความล้มเหลว:", error);
       alert("ส่งข้อความไม่สำเร็จ");
     }

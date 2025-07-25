@@ -5,6 +5,7 @@ import { initLiff } from "@/lib/liff";
 
 const LiffInit = () => {
   useEffect(() => {
+    alert("init");
     initLiff();
   }, []);
 
