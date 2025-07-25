@@ -3,6 +3,7 @@
 import { Profile } from "@liff/get-profile";
 import liff from "@line/liff";
 import { useEffect, useState } from "react";
+import LiffInit from "@/app/components/liff-init";
 
 const LineMessage = () => {
   const [profile, setProfile] = useState<Profile>();
@@ -45,6 +46,7 @@ const LineMessage = () => {
 
   return (
     <div>
+      <LiffInit />
       <h1>Line Message</h1>
       <button
         style={{

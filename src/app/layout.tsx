@@ -1,7 +1,6 @@
 import React from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
-import LiffInit from "./components/liff-init";
 // import { Metadata } from "next";
 
 // export const metadata: Metadata = {
@@ -42,7 +41,6 @@ import LiffInit from "./components/liff-init";
 const RootLayout = ({ children }: React.PropsWithChildren) => (
   <html lang="en">
     <body>
-      <LiffInit />
       <AntdRegistry>{children}</AntdRegistry>
     </body>
   </html>
