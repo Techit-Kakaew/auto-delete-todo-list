@@ -1,34 +1,31 @@
 "use client";
 
 import { Profile } from "@liff/get-profile";
-import liff from "@line/liff";
+import { Liff } from "@line/liff";
 import { useEffect, useState } from "react";
-import LiffInit from "@/app/components/liff-init";
+import { initLiff } from "@/lib/liff";
 
 const LineMessage = () => {
   const [profile, setProfile] = useState<Profile>();
+  const [liff, setLiff] = useState<Liff>();
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      if (typeof window !== "undefined" && liff.isLoggedIn()) {
-        await liff.ready;
-        alert(JSON.stringify(liff?.getContext()));
-        const userProfile = await liff?.getProfile();
-        setProfile(userProfile);
-      }
-    };
-
-    fetchProfile();
+    initLiff().then(async (l) => {
+      alert("init");
+      setLiff(l);
+      const userProfile = await l?.getProfile();
+      setProfile(userProfile);
+    });
   }, []);
 
   const handleSend = async () => {
     try {
-      if (!liff.isInClient()) {
+      if (!liff?.isInClient()) {
         alert("เปิดผ่านแอป LINE เท่านั้นถึงจะส่งข้อความได้");
         return;
       }
 
-      await liff.sendMessages([
+      await liff?.sendMessages([
         {
           type: "text",
           text: "สวัสดีจาก LIFF App 👋",
@@ -46,7 +43,6 @@ const LineMessage = () => {
 
   return (
     <div>
-      <LiffInit />
       <h1>Line Message</h1>
       <button
         style={{
