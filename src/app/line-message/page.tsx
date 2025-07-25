@@ -1,7 +1,7 @@
 "use client";
 
 import { Profile } from "@liff/get-profile";
-import liff, { Liff } from "@line/liff";
+import liff from "@line/liff";
 import { useEffect, useState } from "react";
 
 const LineMessage = () => {
