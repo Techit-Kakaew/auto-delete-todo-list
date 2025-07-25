@@ -13,6 +13,8 @@ const LineMessage = () => {
     initLiff().then(async (l) => {
       alert("init");
       setLiff(l);
+      alert(JSON.stringify(l?.getContext()));
+      await l?.ready;
       const userProfile = await l?.getProfile();
       console.log(JSON.stringify(userProfile));
       setProfile(userProfile);
@@ -21,6 +23,7 @@ const LineMessage = () => {
 
   const handleSend = async () => {
     try {
+      await liff?.ready;
       // if (!liff?.isInClient()) {
       //   alert("เปิดผ่านแอป LINE เท่านั้นถึงจะส่งข้อความได้");
       //   return;
