@@ -14,16 +14,17 @@ const LineMessage = () => {
       alert("init");
       setLiff(l);
       const userProfile = await l?.getProfile();
+      console.log(JSON.stringify(userProfile));
       setProfile(userProfile);
     });
   }, []);
 
   const handleSend = async () => {
     try {
-      if (!liff?.isInClient()) {
-        alert("เปิดผ่านแอป LINE เท่านั้นถึงจะส่งข้อความได้");
-        return;
-      }
+      // if (!liff?.isInClient()) {
+      //   alert("เปิดผ่านแอป LINE เท่านั้นถึงจะส่งข้อความได้");
+      //   return;
+      // }
 
       await liff?.sendMessages([
         {
@@ -33,7 +34,7 @@ const LineMessage = () => {
       ]);
 
       alert("ส่งข้อความเรียบร้อยแล้ว!");
-      liff.closeWindow(); // ปิด LIFF ถ้าต้องการ
+      // liff.closeWindow(); // ปิด LIFF ถ้าต้องการ
     } catch (error) {
       alert(error);
       console.error("ส่งข้อความล้มเหลว:", error);
@@ -56,6 +57,8 @@ const LineMessage = () => {
         Send Message To Line
       </button>
 
+      {liff && <pre>{JSON.stringify(liff)}</pre>}
+      {liff && <pre>{JSON.stringify(liff.getContext())}</pre>}
       {profile && <pre>{JSON.stringify(profile)}</pre>}
     </div>
   );
