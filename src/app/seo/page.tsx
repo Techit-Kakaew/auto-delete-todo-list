@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "MDN Web Docs",
     images: [
       {
-        url: "https://picsum.photos/id/237/300/300",
+        url: "https://fastly.picsum.photos/id/237/300/300.jpg?hmac=9iUR3VHqf0Y9abGyuPZTpEIxHJL0sSvyNtJtDIMSylM",
         // url: "https://developer.mozilla.org/mdn-social-share.d893525a4fb5fb1f67a2.png",
         // url: "https://auto-delete-todo-list.vercel.app/img-share.png",
         // width: 1920,
